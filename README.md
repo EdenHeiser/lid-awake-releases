@@ -2,7 +2,7 @@
 
 Lid Awake keeps your laptop running with the lid closed, on a MacBook or a Windows laptop, and lets you use it from your phone (iPhone or Android): see how it's doing, watch and control its screen, and turn it on or off from anywhere. Everything goes over your own private Tailscale connection, so only you can reach it.
 
-**Download:** [LidAwake-Mac.pkg](https://github.com/EdenHeiser/lid-awake-releases/releases/latest/download/LidAwake-Mac.pkg) for a Mac · [LidAwake-Windows.zip](https://github.com/EdenHeiser/lid-awake-releases/releases/latest/download/LidAwake-Windows.zip) for Windows · [all versions](https://github.com/EdenHeiser/lid-awake-releases/releases)
+**Download:** [LidAwake-Mac.pkg](https://github.com/EdenHeiser/lid-awake-releases/releases/latest/download/LidAwake-Mac.pkg) for a Mac · [LidAwake-Setup.exe](https://github.com/EdenHeiser/lid-awake-releases/releases/latest/download/LidAwake-Setup.exe) for Windows · [all versions](https://github.com/EdenHeiser/lid-awake-releases/releases)
 
 ---
 
@@ -26,13 +26,22 @@ Tailscale is a free app that makes a private, encrypted connection between your 
 
 ### On a Windows laptop
 
-1. Download **[LidAwake-Windows.zip](https://github.com/EdenHeiser/lid-awake-releases/releases/latest/download/LidAwake-Windows.zip)** and unpack the **whole** ZIP (right-click it → **Extract All**).
-2. Double-click **Install Lid Awake (Windows)**.
-   - If Windows says **"Windows protected your PC"**, click **More info** → **Run anyway**.
-   - If it asks **"Do you want to run this file?"**, click **Run**.
-3. If a line shows **[X]**, it tells you what to do. Do it, then open the installer again.
+1. Download **[LidAwake-Setup.exe](https://github.com/EdenHeiser/lid-awake-releases/releases/latest/download/LidAwake-Setup.exe)** and double-click it in **Downloads**.
+2. If Windows says **"Windows protected your PC"**, click **More info** → **Run anyway**.
+   *This happens because Lid Awake isn't signed yet.*
+3. Click **Install**, then **Finish**. The Lid Awake icon appears by the clock (it may be under the **^** arrow).
 
-## 3. Finish on the laptop
+## 3. Sign in and start your free week
+
+Right after installing, a **Sign in** window opens. Click **Continue with Google**, or type your email, click **Send code**, and type the 6-digit code from the email.
+
+- You get **7 days free**, with no card. After that, choose **Monthly** or **Yearly**.
+- One subscription works on all your computers (Mac or Windows) and phones.
+- Until you sign in, or after the trial or subscription ends, Lid Awake is locked: the phone only shows the subscribe screen.
+- Offline, Lid Awake keeps working until the paid date plus 3 days.
+- **Manage subscription…**, **Update card…** (if a payment didn't go through) and **Sign out** are in the cup menu on a Mac, and in the tray menu (right-click the icon by the clock) on Windows.
+
+## 4. Finish on the laptop
 
 The **Set up Lid Awake** window opens by itself. (Later: on a Mac, click the cup → **Set up phone…**; on Windows, right-click the Lid Awake icon by the clock → **Set up phone…**.)
 
@@ -40,7 +49,7 @@ The **Set up Lid Awake** window opens by itself. (Later: on a Mac, click the cup
 2. **Phone password:** type a password (at least 10 characters) twice and click **Save password**.
 3. Click **Turn Lid Awake on**. A **QR code** appears.
 
-## 4. Add it to your phone
+## 5. Add it to your phone
 
 Make sure Tailscale is on on the phone.
 
@@ -69,11 +78,16 @@ Coming from Mac version 2.0.1 or older? macOS asks once more for **Screen Record
 ## Remove it
 
 - **Mac:** open **Terminal** and run `sh ~/Applications/"Lid Awake.app"/Contents/Resources/uninstall.sh`. It asks whether to delete your settings too.
-- **Windows:** double-click **Uninstall Lid Awake (Windows)** in the unpacked folder.
+- **Windows:** open **Settings → Apps → Installed apps**, find **Lid Awake**, click **⋯** → **Uninstall**. It asks whether to delete your settings too. (Installed from the older ZIP? Double-click **Uninstall Lid Awake (Windows)** in its folder.)
 
 ## Claude alerts (optional, for Claude Code users)
 
 Your phone can show your Claude usage after each reply and alert you when Claude finishes or needs you.
 
-- **Mac:** in **Terminal**, run `python3 ~/Applications/"Lid Awake.app"/Contents/Resources/tools/claude/setup.py on` (`off` turns it off).
-- **Windows:** the installer asks; later, use the tray menu.
+- **Mac:** click the cup in the menu bar → **Claude alerts and usage from Claude Code…** → **Turn on** (click it again to turn it off).
+- **Windows:** tick the box on the installer's last page; later, right-click the Lid Awake icon → **Claude alerts and usage from Claude Code…**.
+
+## Privacy
+
+- Lid Awake stores your **email**, each computer's **name**, a **hashed computer ID** (a scrambled fingerprint) and your **subscription state**. Nothing else. Accounts are kept at **Supabase**, payments are handled by **Lemon Squeezy** (your card number never reaches Lid Awake).
+- Your screen, camera and files only go to your own phone, over your private Tailscale connection.
